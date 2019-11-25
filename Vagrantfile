@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.provision "shell", path: "./scripts/setup-network.sh"
   config.vm.provision :reload
+  config.vm.provision "shell", inline: "apt update"
   config.vm.provision "shell", path: "./scripts/setup-python.sh"
   config.vm.provision "shell", privileged: false, path: "./scripts/setup-xdisplay.sh"
   config.vm.provision "shell", privileged: false, path: "./scripts/setup-direnv.sh"

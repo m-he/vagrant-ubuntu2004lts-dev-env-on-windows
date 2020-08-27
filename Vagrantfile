@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
       trigger.info = "Creating 'DevNATSwitch' Hyper-V switch if it does not exist..."
       trigger.run = {privileged: "true", powershell_elevated_interactive: "true", path: "./scripts/intSwitch.ps1"}
   end
-  config.vm.box = "generic/ubuntu1804"
+  config.vm.box = "generic/ubuntu2004"
   config.vm.hostname = "python-dev"
   config.vm.define "python3-dev"
   config.vm.provider "hyperv" do |h|
